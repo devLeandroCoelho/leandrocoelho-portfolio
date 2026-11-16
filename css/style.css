@@ -1,0 +1,43 @@
+/* ===== Variaveis de cor: Tema claro (padrão) e escuro =====*/
+:root {
+    --fundo: #f4f7fb;
+    --cartao: #fff;
+    --texto: #1b2a3d;
+    --suave: #5a6b80;
+    --azul: #1757c2;
+    --borda: #d9e2ee;
+}
+
+/* JS que adiciona a classe "escuro" no <body> */
+body.escuro {
+    --fundo:#0e1726;
+    --cartao:#16233a;
+    --texto: #e8eef7;
+    --suave: #93a4bb;
+    --azul:#5b9bff;
+    --borda:#26364f;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 70px;} /*rolagem fica suave até a ancora*/
+body { font-family: "Segoe UI", Roboto, Arial, sans-serif; background: var(--fundo); color: var(--texto); line-height: 1.6; transition: background .3s, color .3s;}
+
+/* ===== Menu Fixo =====*/
+.topo { position: fixed; top: 0; left: 0; right: 0; height: 60px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; background: var(--cartao); border-bottom: 1px solid var(--borda); z-index: 10; }
+.logo { font-weight: 700; color: var(--azul); text-decoration: none; font-size: 1.15rem; }
+.menu { display: flex; gap: 22px; }
+.menu a {color: var(--texto); text-decoration: none; padding: 6px 2px; border-bottom: 2px solid transparent; }
+.menu a:hover { color: var(--azul); border-bottom-color: var(--azul); }
+.btn-menu, .btn-tema { background: none; border: 1px solid var(--borda); color: var(--texto); border-radius: 6px; padding: 4px 10px; font-size: 1.1rem; cursor: pointer ;}
+
+/* ===== Conteúdo ===== */
+main { max-width: 960px; margin: 0 auto; padding: 80px 20px 20px; }
+.secao { padding: 40px 0; border-bottom: 1px solid var(--borda); }
+h1 { font-size: 2.4rem; line-height: 1.2; margin-bottom: 8px; }
+h2 { font-size: 1.6rem; margin: 22px 0 12 px; color: var(--azul); }
+h3 { margin: 18px 0 8px; }
+p { margin-bottom: 12px; }
+a { color: var(--azul); }
+.lista { margin-left: 22px; margin-bottom: 12px; }
+.subtitulo { color: var(--suave); font-size: 1.1rem; margin-bottom: 18px; }
+
