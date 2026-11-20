@@ -182,18 +182,28 @@ a {
 }
 
 
-/* ---------- HERO (texto de um lado e foto do outro) ---------- */
-
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 30px;
+  /* degradê azul no fundo do hero */
+  background: linear-gradient(135deg, #1757c2 0%, #3b82f6 100%);
+  color: #fff;
+  padding: 32px;
+  border-radius: 14px;
+  margin-bottom: 10px;
 }
 
-.hero-texto {
-  flex: 1;
-}
+.hero-texto { flex: 1; }
+
+/* o texto do hero precisa ser claro, senão some no fundo azul */
+.hero h1 { color: #fff; }
+.hero .etiqueta { color: #dbe8ff; }
+.hero .subtitulo { color: #e6efff; }
+
+/* botão branco com texto azul, pra aparecer em cima do azul */
+.hero .botao { background: #fff; color: #1757c2; }
 
 /* o texto pega o espaço que sobra ao lado da foto */
 
@@ -466,41 +476,10 @@ body.escuro .btn-topo {
     padding: 14px 24px;
   }
 
-  /* ---------- HERO (texto de um lado e foto do outro) ---------- */
+  /* hero em coluna, com a foto em cima (column-reverse inverte a ordem) */
   .hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-    /* degradê azul no fundo do hero */
-    background: linear-gradient(135deg, #1757c2 0%, #3b82f6 100%);
-    color: #fff;
-    padding: 32px;
-    border-radius: 14px;
-    margin-bottom: 10px;
-  }
-
-  .hero-texto {
-    flex: 1;
-  }
-
-  /* o texto do hero precisa ser claro, senão some no fundo azul */
-  .hero h1 {
-    color: #fff;
-  }
-
-  .hero .etiqueta {
-    color: #dbe8ff;
-  }
-
-  .hero .subtitulo {
-    color: #e6efff;
-  }
-
-  /* botão branco com texto azul, pra aparecer em cima do azul */
-  .hero .botao {
-    background: #fff;
-    color: #1757c2;
+    flex-direction: column-reverse;
+    text-align: center;
   }
 
   .foto {
