@@ -59,30 +59,68 @@
             <h3>Formação acadêmica</h3>
             <div class="cartao">
 
-            <h3>Cursos e certificações</h3>
-            <ul class="lista">
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
+                <h3>Cursos e certificações</h3>
+                <ul class="lista">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
 
-            <h3>Idiomas</h3>
-            <ul class="lista">
-            </ul>
+                <h3>Idiomas</h3>
+                <ul class="lista">
+                </ul>
 
-            <h3>Experiência profissional</h3>
-            <!-- Linha do tempo vertical -->
-            <div class="timeline">
-                <div class="item">
+                <h3>Experiência profissional</h3>
+                <!-- Linha do tempo vertical -->
+                <div class="timeline">
+                    <div class="item">
+                    </div>
+                    <div class="item">
+                    </div>
+                    <div class="item">
+                    </div>
+                    <div class="item">
+                    </div>
                 </div>
-                <div class="item">
-                </div>
-                <div class="item">
-                </div>
-                <div class="item">
-                </div>
-            </div>
         </section>
+        <!-- ===== SEÇÃO 3: PORTFÓLIO (cards em grade) ===== -->
+        <section id="portfolio" class="secao">
+            <h2>Portfólio</h2>
+            <div class="grade">
+                <article class="cartao">
+                </article>
+                <article class="cartao">
+                </article>
+                <article class="cartao">
+                </article>
+            </div>
+            <p>
+                <a href="https://www.linkedin.com/in/devleandrocoelho" target="_blank" rel="noopener">LinkedIn</a> ·
+                <a href="https://github.com/devleandrocoelho" target="_blank" rel="noopener">GitHub</a>
+            </p>
+        </section>
+
+        <!-- ===== SEÇÃO 4: CONTATO ===== -->
+        <section id="contato" class="secao">
+            <h2>Contato</h2>
+            <!-- novalidate: a validação é feita em JavaScript -->
+            <form id="form-contato" novalidate>
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome">
+                <small class="erro" id="erro-nome"></small>
+
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="voce@dominio.com">
+                <small class="erro" id="erro-email"></small>
+
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem"></textarea>
+                <small class="erro" id="erro-mensagem"></small>
+
+                <button type="submit" class="botao">Enviar</button>
+            </form>
+        </section>
+
     </main>
     <script src="js/script.js"></script>
 </body>
