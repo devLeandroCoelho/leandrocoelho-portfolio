@@ -1,6 +1,7 @@
 /* CSS do meu portfólio
    Organizei assim: cores, base, menu, seções, hero, cartões,
-   linha do tempo, formulário e por último a parte responsiva (celular) */
+   linha do tempo, formulário, botão de voltar ao topo e por último
+   a parte responsiva (celular) */
 
 
 /* ---------- CORES ----------
@@ -9,18 +10,13 @@
 
 /* tema claro (padrão) */
 :root {
-  --fundo: #f4f7fb;
-  /* fundo da página */
-  --cartao: #ffffff;
-  /* fundo dos cartões, do menu e do formulário */
-  --texto: #1b2a3d;
-  /* texto principal */
-  --suave: #5a6b80;
-  /* texto mais claro (datas, subtítulo) */
-  --azul: #1757c2;
-  /* cor de destaque (títulos, links, botões) */
-  --borda: #d9e2ee;
-  /* linhas e bordas */
+  --fundo: #e8eff9;       /* fundo da página */
+  --cartao: #ffffff;      /* fundo dos cartões, do menu e do formulário */
+  --cartao-cor: #eef4ff;  /* fundo dos cards do portfólio (azulzinho) */
+  --texto: #1b2a3d;       /* texto principal */
+  --suave: #5a6b80;       /* texto mais claro (datas, subtítulo) */
+  --azul: #1757c2;        /* cor de destaque (títulos, links, botões) */
+  --borda: #c8d6ea;       /* linhas e bordas */
 }
 
 /* tema escuro: o JavaScript coloca a classe "escuro" no body
@@ -28,6 +24,7 @@
 body.escuro {
   --fundo: #0e1726;
   --cartao: #16233a;
+  --cartao-cor: #1b2d4a;
   --texto: #e8eef7;
   --suave: #93a4bb;
   --azul: #5b9bff;
@@ -46,10 +43,8 @@ body.escuro {
 }
 
 html {
-  scroll-behavior: smooth;
-  /* rolagem suave quando clica no menu */
-  scroll-padding-top: 70px;
-  /* espaço pro menu fixo não tapar o título da seção */
+  scroll-behavior: smooth;  /* rolagem suave quando clica no menu */
+  scroll-padding-top: 70px; /* espaço pro menu fixo não tapar o título da seção */
 }
 
 body {
@@ -57,29 +52,25 @@ body {
   background: var(--fundo);
   color: var(--texto);
   line-height: 1.6;
-  transition: background .3s, color .3s;
-  /* troca de tema mais suave */
+  transition: background .3s, color .3s; /* troca de tema mais suave */
 }
 
 
 /* ---------- MENU FIXO ---------- */
 
 .topo {
-  position: fixed;
-  /* fica parado no topo mesmo rolando a página */
+  position: fixed;  /* fica parado no topo mesmo rolando a página */
   top: 0;
   left: 0;
   right: 0;
   height: 60px;
-  display: flex;
-  /* flexbox pra deixar logo, menu e botão na mesma linha */
+  display: flex;    /* flexbox pra deixar logo, menu e botão na mesma linha */
   align-items: center;
   justify-content: space-between;
   padding: 0 24px;
   background: var(--cartao);
   border-bottom: 1px solid var(--borda);
-  z-index: 10;
-  /* deixa o menu por cima do resto */
+  z-index: 10;      /* deixa o menu por cima do resto */
 }
 
 .logo {
@@ -89,20 +80,17 @@ body {
   font-size: 1.15rem;
 }
 
+/* gap é o espaço entre os links */
 .menu {
   display: flex;
   gap: 22px;
 }
 
-/* gap é o espaço entre os links */
-
 .menu a {
   color: var(--texto);
-  text-decoration: none;
-  /* tira o sublinhado */
+  text-decoration: none;                /* tira o sublinhado */
   padding: 6px 2px;
-  border-bottom: 2px solid transparent;
-  /* borda invisível pra não dar "pulo" no hover */
+  border-bottom: 2px solid transparent; /* borda invisível pra não dar "pulo" no hover */
 }
 
 .menu a:hover {
@@ -131,20 +119,16 @@ body {
 /* ---------- SEÇÕES E TEXTOS ---------- */
 
 main {
-  max-width: 960px;
-  /* largura máxima do conteúdo */
-  margin: 0 auto;
-  /* centraliza */
-  padding: 80px 20px 20px;
-  /* 80px em cima por causa do menu fixo */
+  max-width: 960px;        /* largura máxima do conteúdo */
+  margin: 0 auto;          /* centraliza */
+  padding: 80px 20px 20px; /* 80px em cima por causa do menu fixo */
 }
 
+/* linha entre as seções */
 .secao {
   padding: 40px 0;
   border-bottom: 1px solid var(--borda);
 }
-
-/* linha entre as seções */
 
 h1 {
   font-size: 2.4rem;
@@ -182,6 +166,8 @@ a {
 }
 
 
+/* ---------- HERO (texto de um lado e foto do outro) ---------- */
+
 .hero {
   display: flex;
   align-items: center;
@@ -195,25 +181,27 @@ a {
   margin-bottom: 10px;
 }
 
-.hero-texto { flex: 1; }
+/* o texto pega o espaço que sobra ao lado da foto */
+.hero-texto {
+  flex: 1;
+}
 
 /* o texto do hero precisa ser claro, senão some no fundo azul */
 .hero h1 { color: #fff; }
 .hero .etiqueta { color: #dbe8ff; }
 .hero .subtitulo { color: #e6efff; }
 
-/* botão branco com texto azul, pra aparecer em cima do azul */
+/* botão branco com texto azul, pra aparecer em cima do azul
+   (a segunda linha garante o mesmo visual no tema escuro) */
 .hero .botao { background: #fff; color: #1757c2; }
-
-/* o texto pega o espaço que sobra ao lado da foto */
+body.escuro .hero .botao { color: #1757c2; }
 
 /* o textinho acima do nome (DEVOPS | INFRAESTRUTURA) */
 .etiqueta {
   color: var(--azul);
   font-weight: 600;
   letter-spacing: 1px;
-  text-transform: uppercase;
-  /* deixa em maiúsculo */
+  text-transform: uppercase; /* deixa em maiúsculo */
   font-size: .85rem;
   margin-bottom: 6px;
 }
@@ -221,10 +209,8 @@ a {
 .foto {
   width: 260px;
   height: 260px;
-  border-radius: 50%;
-  /* 50% deixa redondo */
-  object-fit: cover;
-  /* a foto preenche sem ficar esticada */
+  border-radius: 50%; /* 50% deixa redondo */
+  object-fit: cover;  /* a foto preenche sem ficar esticada */
 }
 
 
@@ -240,8 +226,7 @@ a {
   border-radius: 6px;
   cursor: pointer;
   font-size: 1rem;
-  text-decoration: none;
-  /* pro caso de ser um link <a> */
+  text-decoration: none; /* pro caso de ser um link <a> */
 }
 
 .botao:hover {
@@ -281,11 +266,26 @@ body.escuro .botao {
   margin-bottom: 16px;
 }
 
+/* cards do portfólio: faixa azul em cima, fundo azulzinho e sombra */
 .grade .cartao {
-  margin-bottom: 0;
+  margin-bottom: 0;                    /* na grade o espaço já vem do gap */
+  border-top: 4px solid var(--azul);   /* faixa colorida no topo */
+  background: var(--cartao-cor);
+  box-shadow: 0 2px 8px rgba(23, 87, 194, .10);
+  transition: transform .2s, box-shadow .2s;
 }
 
-/* na grade o espaço já vem do gap */
+/* ao passar o mouse o card sobe um pouquinho */
+.grade .cartao:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(23, 87, 194, .20);
+}
+
+/* título do card na cor azul */
+.grade .cartao h3 {
+  color: var(--azul);
+  margin-top: 0;
+}
 
 
 /* ---------- LINHA DO TEMPO (experiência) ---------- */
@@ -305,8 +305,7 @@ body.escuro .botao {
 /* a bolinha de cada item eu fiz com ::before
    (ele cria um elemento "falso" só pelo CSS) e posicionei em cima da linha */
 .timeline .item::before {
-  content: "";
-  /* sem isso o ::before não aparece */
+  content: "";                    /* sem isso o ::before não aparece */
   position: absolute;
   left: -30px;
   top: 6px;
@@ -314,8 +313,7 @@ body.escuro .botao {
   height: 13px;
   border-radius: 50%;
   background: var(--azul);
-  border: 2px solid var(--fundo);
-  /* contorno da cor do fundo pra dar o efeito de furinho */
+  border: 2px solid var(--fundo); /* contorno da cor do fundo pra dar o efeito de furinho */
 }
 
 .data {
@@ -329,8 +327,7 @@ body.escuro .botao {
 
 form {
   display: flex;
-  flex-direction: column;
-  /* campos um embaixo do outro */
+  flex-direction: column; /* campos um embaixo do outro */
   gap: 6px;
   max-width: 520px;
   margin-top: 14px;
@@ -343,8 +340,7 @@ textarea {
   border-radius: 6px;
   background: var(--cartao);
   color: var(--texto);
-  font: inherit;
-  /* usa a mesma fonte do resto do site */
+  font: inherit; /* usa a mesma fonte do resto do site */
 }
 
 /* o JS coloca essa classe quando o campo tem erro */
@@ -360,25 +356,20 @@ textarea.invalido {
   min-height: 1.1em;
 }
 
+/* botão não estica na largura toda */
 form .botao {
   align-self: flex-start;
 }
 
-/* botão não estica na largura toda */
-
 /* modal: fundo escuro cobrindo a tela toda com a caixa no meio */
 .modal {
   position: fixed;
-  inset: 0;
-  /* o mesmo que top, right, bottom e left = 0 */
-  background: rgba(0, 0, 0, .55);
-  /* preto meio transparente */
+  inset: 0;                    /* o mesmo que top, right, bottom e left = 0 */
+  background: rgba(0, 0, 0, .55); /* preto meio transparente */
   display: flex;
   align-items: center;
-  justify-content: center;
-  /* centraliza a caixa */
-  z-index: 20;
-  /* fica por cima do menu */
+  justify-content: center;     /* centraliza a caixa */
+  z-index: 20;                 /* fica por cima do menu */
 }
 
 /* precisei dessa regra porque o display: flex de cima
@@ -402,7 +393,10 @@ form .botao {
   font-size: .9rem;
 }
 
-/* botão de voltar ao topo, fixo no canto inferior direito */
+
+/* ---------- BOTÃO VOLTAR AO TOPO ---------- */
+
+/* fixo no canto inferior direito */
 .btn-topo {
   position: fixed;
   right: 20px;
@@ -436,6 +430,7 @@ body.escuro .btn-topo {
   color: #0e1726;
 }
 
+
 /* ---------- RESPONSIVO ----------
    o @media só vale quando a tela é menor que o tamanho indicado */
 
@@ -448,11 +443,11 @@ body.escuro .btn-topo {
 
 /* celular */
 @media (max-width: 700px) {
+
+  /* mostra o botão ☰ */
   .btn-menu {
     display: block;
   }
-
-  /* mostra o botão ☰ */
 
   /* o menu vira uma lista na vertical e fica escondido
      até o JS colocar a classe "aberto" */
@@ -480,6 +475,7 @@ body.escuro .btn-topo {
   .hero {
     flex-direction: column-reverse;
     text-align: center;
+    padding: 24px 16px;
   }
 
   .foto {
@@ -491,9 +487,8 @@ body.escuro .btn-topo {
     font-size: 1.8rem;
   }
 
+  /* 1 cartão por linha */
   .grade {
     grid-template-columns: 1fr;
   }
-
-  /* 1 cartão por linha */
 }

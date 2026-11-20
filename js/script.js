@@ -1,5 +1,5 @@
 // Script do meu portfólio
-// Aqui eu fiz 3 coisas: menu do celular, tema claro/escuro e o formulário de contato
+// Aqui eu fiz 4 coisas: menu do celular, tema claro/escuro, formulário de contato e botão de voltar ao topo
 
 
 // ---------- MENU DO CELULAR ----------
@@ -22,7 +22,8 @@ menu.querySelectorAll('a').forEach(link => {
 
 
 // ---------- TEMA CLARO / ESCURO ----------
-// o CSS usa variáveis de cor, então basta colocar a classe "escuro" no body que as cores do site todo mudam
+// o CSS usa variáveis de cor, então basta colocar a classe "escuro" no body
+// que as cores do site todo mudam
 
 const btnTema = document.getElementById('btn-tema');
 
@@ -122,10 +123,11 @@ document.getElementById('modal-fechar').addEventListener('click', () => {
   modal.hidden = true;
 });
 
-// clicar no fundo escuro (fora da caixa) também fecha. uma pratica legal, pois nem sempre alguem apeta no fechar
+// clicar no fundo escuro (fora da caixa) também fecha. Uma prática legal, pois nem sempre alguém aperta no fechar
 modal.addEventListener('click', (e) => {
   if (e.target === modal) modal.hidden = true;
 });
+
 
 // ---------- BOTÃO VOLTAR AO TOPO ----------
 const btnTopo = document.getElementById('btn-topo');
