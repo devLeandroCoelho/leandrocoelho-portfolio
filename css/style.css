@@ -1,43 +1,191 @@
-/* ===== Variaveis de cor: Tema claro (padrão) e escuro =====*/
+/* CSS do meu portfólio
+   Organizei assim: cores, base, menu, seções, hero, cartões,
+   linha do tempo, formulário e por último a parte responsiva (celular) */
+
+
+/* ---------- CORES ----------
+   guardei as cores em variáveis pra poder trocar o tema fácil.
+   Se eu quiser mudar o azul do site é só alterar aqui */
+
+/* tema claro (padrão) */
 :root {
-    --fundo: #f4f7fb;
-    --cartao: #fff;
-    --texto: #1b2a3d;
-    --suave: #5a6b80;
-    --azul: #1757c2;
-    --borda: #d9e2ee;
+  --fundo: #f4f7fb;   /* fundo da página */
+  --cartao: #ffffff;  /* fundo dos cartões, do menu e do formulário */
+  --texto: #1b2a3d;   /* texto principal */
+  --suave: #5a6b80;   /* texto mais claro (datas, subtítulo) */
+  --azul: #1757c2;    /* cor de destaque (títulos, links, botões) */
+  --borda: #d9e2ee;   /* linhas e bordas */
 }
 
-/* JS que adiciona a classe "escuro" no <body> */
+/* tema escuro: o JavaScript coloca a classe "escuro" no body
+   e essas cores trocam as de cima */
 body.escuro {
-    --fundo:#0e1726;
-    --cartao:#16233a;
-    --texto: #e8eef7;
-    --suave: #93a4bb;
-    --azul:#5b9bff;
-    --borda:#26364f;
+  --fundo: #0e1726;
+  --cartao: #16233a;
+  --texto: #e8eef7;
+  --suave: #93a4bb;
+  --azul: #5b9bff;
+  --borda: #26364f;
 }
 
+
+/* ---------- BASE ---------- */
+
+/* tira as margens padrão do navegador
+   box-sizing: border-box faz o padding entrar na conta da largura */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; scroll-padding-top: 70px;} /*rolagem fica suave até a ancora*/
-body { font-family: "Segoe UI", Roboto, Arial, sans-serif; background: var(--fundo); color: var(--texto); line-height: 1.6; transition: background .3s, color .3s;}
 
-/* ===== Menu Fixo =====*/
-.topo { position: fixed; top: 0; left: 0; right: 0; height: 60px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; background: var(--cartao); border-bottom: 1px solid var(--borda); z-index: 10; }
+html {
+  scroll-behavior: smooth;  /* rolagem suave quando clica no menu */
+  scroll-padding-top: 70px; /* espaço pro menu fixo não tapar o título da seção */
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+  line-height: 1.6;
+  transition: background .3s, color .3s; /* troca de tema mais suave */
+}
+
+
+/* ---------- MENU FIXO ---------- */
+
+.topo {
+  position: fixed;  /* fica parado no topo mesmo rolando a página */
+  top: 0; left: 0; right: 0;
+  height: 60px;
+  display: flex;    /* flexbox pra deixar logo, menu e botão na mesma linha */
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: var(--cartao);
+  border-bottom: 1px solid var(--borda);
+  z-index: 10;      /* deixa o menu por cima do resto */
+}
+
 .logo { font-weight: 700; color: var(--azul); text-decoration: none; font-size: 1.15rem; }
-.menu { display: flex; gap: 22px; }
-.menu a {color: var(--texto); text-decoration: none; padding: 6px 2px; border-bottom: 2px solid transparent; }
-.menu a:hover { color: var(--azul); border-bottom-color: var(--azul); }
-.btn-menu, .btn-tema { background: none; border: 1px solid var(--borda); color: var(--texto); border-radius: 6px; padding: 4px 10px; font-size: 1.1rem; cursor: pointer ;}
 
-/* ===== Conteúdo ===== */
-main { max-width: 960px; margin: 0 auto; padding: 80px 20px 20px; }
-.secao { padding: 40px 0; border-bottom: 1px solid var(--borda); }
+.menu { display: flex; gap: 22px; } /* gap é o espaço entre os links */
+
+.menu a {
+  color: var(--texto);
+  text-decoration: none; /* tira o sublinhado */
+  padding: 6px 2px;
+  border-bottom: 2px solid transparent; /* borda invisível pra não dar "pulo" no hover */
+}
+.menu a:hover { color: var(--azul); border-bottom-color: var(--azul); }
+
+/* botões do menu (hambúrguer e tema) */
+.btn-menu, .btn-tema {
+  background: none;
+  border: 1px solid var(--borda);
+  color: var(--texto);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+/* o hambúrguer fica escondido no computador, só aparece no celular (lá embaixo) */
+.btn-menu { display: none; }
+
+
+/* ---------- SEÇÕES E TEXTOS ---------- */
+
+main {
+  max-width: 960px;  /* largura máxima do conteúdo */
+  margin: 0 auto;    /* centraliza */
+  padding: 80px 20px 20px; /* 80px em cima por causa do menu fixo */
+}
+
+.secao { padding: 40px 0; border-bottom: 1px solid var(--borda); } /* linha entre as seções */
+
 h1 { font-size: 2.4rem; line-height: 1.2; margin-bottom: 8px; }
-h2 { font-size: 1.6rem; margin: 22px 0 12 px; color: var(--azul); }
+h2 { font-size: 1.6rem; margin: 22px 0 12px; color: var(--azul); }
 h3 { margin: 18px 0 8px; }
-p { margin-bottom: 12px; }
-a { color: var(--azul); }
+p  { margin-bottom: 12px; }
+a  { color: var(--azul); }
+
 .lista { margin-left: 22px; margin-bottom: 12px; }
 .subtitulo { color: var(--suave); font-size: 1.1rem; margin-bottom: 18px; }
 
+
+/* ---------- HERO (texto de um lado e foto do outro) ---------- */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+.hero-texto { flex: 1; } /* o texto pega o espaço que sobra ao lado da foto */
+
+/* o textinho acima do nome (DEVOPS | INFRAESTRUTURA) */
+.etiqueta {
+  color: var(--azul);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase; /* deixa em maiúsculo */
+  font-size: .85rem;
+  margin-bottom: 6px;
+}
+
+.foto {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;  /* 50% deixa redondo */
+  object-fit: cover;   /* a foto preenche sem ficar esticada */
+}
+
+
+.modal {
+  position: fixed;
+  inset: 0;                    /* o mesmo que top, right, bottom e left = 0 */
+  background: rgba(0,0,0,.55); /* preto meio transparente */
+  display: flex;
+  align-items: center;
+  justify-content: center;     /* centraliza a caixa */
+  z-index: 20;                 /* fica por cima do menu */
+}
+/* precisei dessa regra porque o display: flex de cima
+   ignorava o atributo hidden e o modal não sumia */
+.modal[hidden] { display: none; }
+
+.modal-caixa { background: var(--cartao); padding: 28px; border-radius: 10px; text-align: center; max-width: 340px; }
+
+.rodape { text-align: center; padding: 24px; color: var(--suave); font-size: .9rem; }
+
+
+/* ---------- RESPONSIVO ----------
+   o @media só vale quando a tela é menor que o tamanho indicado */
+
+/* tablet: a grade passa a ter 2 colunas */
+@media (max-width: 800px) {
+  .grade { grid-template-columns: 1fr 1fr; }
+}
+
+/* celular */
+@media (max-width: 700px) {
+  .btn-menu { display: block; } /* mostra o botão ☰ */
+
+  /* o menu vira uma lista na vertical e fica escondido
+     até o JS colocar a classe "aberto" */
+  .menu {
+    display: none;
+    position: absolute;
+    top: 60px; left: 0; right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--cartao);
+    border-bottom: 1px solid var(--borda);
+  }
+  .menu.aberto { display: flex; }
+  .menu a { padding: 14px 24px; }
+
+  /* hero em coluna, com a foto em cima (column-reverse inverte a ordem) */
+  .hero { flex-direction: column-reverse; text-align: center; }
+  .foto { width: 200px; height: 200px; }
+
+  h1 { font-size: 1.8rem; }
+  .grade { grid-template-columns: 1fr; } /* 1 cartão por linha */
+}
