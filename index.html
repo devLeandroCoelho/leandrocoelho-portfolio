@@ -1,54 +1,63 @@
 <!DOCTYPE html>
+<!-- Portfólio pessoal - Leandro Prazeres Coelho | Atividade Prática UNINTER -->
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Leandro Prazeres Coelho">
+    <meta name="description" content="Portfólio de Leandro Prazeres Coelho - DevOps e Infraestrutura">
     <title>Leandro Prazeres Coelho | DevOps</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <!-- =====MENU FIXO (Visivel em toda pagina)-->
+
+    <!-- ===== MENU FIXO (visível em toda a página) ===== -->
     <header class="topo">
         <a href="#sobre" class="logo">Leandro Coelho</a>
-        <!-- Botão Hamburguer: só aparece em telas pequenas-->
-        <button id="btn-menu" class="btn-menu" aria-label="Abrir Menu" aria-expanded="false">☰</button>
+        <!-- Botão hambúrguer: só aparecer em telas pequenas -->
+        <button id="btn-menu" class="btn-menu" aria-label="Abrir menu" aria-expanded="false">☰</button>
         <nav id="menu" class="menu">
             <a href="#sobre">Sobre mim</a>
             <a href="#formacao">Formação</a>
-            <a href="portfolio">Portfólio</a>
+            <a href="#portfolio">Portfólio</a>
             <a href="#contato">Contato</a>
         </nav>
-        <button id="btn-tema" class="btn-tema" aria-label="Alterar tema claro/escuro">🌙</button>
+        <button id="btn-tema" class="btn-tema" aria-label="Alternar tema claro/escuro">🌙</button>
     </header>
+
     <main>
-        <!-- ====Seção 1: Sobre MIM (hero + apresentação) ====-->
+        <!-- ===== SEÇÃO 1: SOBRE MIM (hero + apresentação) ===== -->
         <section id="sobre" class="secao">
             <div class="hero">
                 <div class="hero-texto">
                     <p class="etiqueta">DevOps | Infraestrutura</p>
                     <h1>Leandro Prazeres Coelho</h1>
-                    <p class="subtitulo">Mais de 20 anos em TI, da Infraestrutura ao desenvolvimento de software.</p>
+                    <p class="subtitulo">Mais de 20 anos em TI, da infraestrutura ao desenvolvimento de software.</p>
                     <a href="#contato" class="botao">Fale comigo</a>
                 </div>
-                <!-- Foto à Direita-->
-                <img src="img/foto.png" alt="Foto de Leandro" class="foto">
+                <!-- Foto à direita -->
+                <img src="img/foto.png" alt="Foto de Leandro Prazeres Coelho" class="foto">
             </div>
+
             <h2>Apresentação</h2>
             <p>
-                texto
+                Sou profissional de TI com mais de 20 anos de experiência, construída em suporte técnico,
+                infraestrutura, redes e liderança de equipes. Minha ultima atuacao foi como DevOps na Ultra LIMS,
+                cuidando de ambientes Docker, firewalls pfSense, VPN, monitoramento com Zabbix e bancos
+                MySQL em servidores Linux.
             </p>
             <p>
-                texto2
+                Também tenho vivência como desenvolvedor Java (Spring e Angular) e estou ampliando meus
+                estudos em desenvolvimento backend e dados, unindo a visão de infraestrutura à de código.
             </p>
+
             <h2>Hobbies e interesses</h2>
             <ul class="lista">
-                <li>item</li>
-                <li>item</li>
-                <li>item</li>
-                <li>item</li>
+                <li>Criar conteúdo de humor sobre o mundo da TI no Instagram</li>
+                <li>Desenvolver projetos próprios (apps web e jogos de simulação)</li>
+                <li>Ajudar animais como lar temporário voluntário</li>
+                <li>Música e acompanhar preços de passagens aéreas</li>
             </ul>
         </section>
 
@@ -58,41 +67,77 @@
 
             <h3>Formação acadêmica</h3>
             <div class="cartao">
+                <strong>Análise e Desenvolvimento de Sistemas</strong>
+                <span>UNINTER Centro Universitário Internacional · Graduação · Conclusao prevista para FEV/27</span>
+            </div>
 
-                <h3>Cursos e certificações</h3>
-                <ul class="lista">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
+            <h3>Cursos e certificações</h3>
+            <ul class="lista">
+                <li>Desenvolvimento Web Full Stack</li>
+                <li>Front End &amp; UX/UI Design</li>
+                <li>HTML e CSS para Iniciantes</li>
+                <li>ITIL Foundation</li>
+                <li>ITIL Practitioner Support and Restore</li>
+            </ul>
 
-                <h3>Idiomas</h3>
-                <ul class="lista">
-                </ul>
+            <h3>Idiomas</h3>
+            <ul class="lista">
+                <li>Português: nativo</li>
+                <li>Inglês: intermediário (Professional Working)</li>
+                <li>Espanhol: básico</li>
+            </ul>
 
-                <h3>Experiência profissional</h3>
-                <!-- Linha do tempo vertical -->
-                <div class="timeline">
-                    <div class="item">
-                    </div>
-                    <div class="item">
-                    </div>
-                    <div class="item">
-                    </div>
-                    <div class="item">
-                    </div>
+            <h3>Experiência profissional</h3>
+            <!-- Linha do tempo vertical -->
+            <div class="timeline">
+                <div class="item">
+                    <span class="data">jul/2025 – jun/26</span>
+                    <strong>DevOps · Ultra LIMS</strong>
+                    <p>Docker (PHP, MySQL, Nginx), pfSense, VPN, Zabbix e MySQL em Ubuntu.</p>
                 </div>
+                <div class="item">
+                    <span class="data">nov/2022 – set/2023</span>
+                    <strong>Desenvolvedor Java · DataJuri</strong>
+                    <p>Spring, Angular, PostgreSQL, MongoDB e AWS em software SaaS jurídico.</p>
+                </div>
+                <div class="item">
+                    <span class="data">nov/2021 – mai/2022</span>
+                    <strong>Analista de Processos · Studio Z</strong>
+                    <p>Mapeamento e melhoria de processos, Scrum e Kanban.</p>
+                </div>
+                <div class="item">
+                    <span class="data">fev/2009 – jul/2019</span>
+                    <strong>Suporte Técnico N2 e Líder de Suporte · FIESC</strong>
+                    <p>Infraestrutura (AD, VMware, Nagios), gestão de SLA e equipe de 14 pessoas.</p>
+                </div>
+            </div>
         </section>
+
         <!-- ===== SEÇÃO 3: PORTFÓLIO (cards em grade) ===== -->
         <section id="portfolio" class="secao">
             <h2>Portfólio</h2>
             <div class="grade">
                 <article class="cartao">
+                    <h3>ITEM 1</h3>
+                    <p>Descricao do Projeto</p>
+                    <a href="https://github.com/devleandrocoelho" target="_blank" rel="noopener">Ver no GitHub →</a>
                 </article>
                 <article class="cartao">
+                    <h3>ITEM 2</h3>
+                    <p>Descricao do Projeto</p>
+                    <a href="https://github.com/devleandrocoelho" target="_blank" rel="noopener">Ver no GitHub →</a>
                 </article>
                 <article class="cartao">
+                    <h3>ITEM 3</h3>
+                    <p>Descricao do Projeto</p>
+                    <a href="https://github.com/devleandrocoelho" target="_blank" rel="noopener">Ver no GitHub →</a>
                 </article>
+                <article class="cartao">
+                    <h3>ITEM 4</h3>
+                    <p>Descricao do Projeto</p>
+                    <a href="https://github.com/devleandrocoelho" target="_blank" rel="noopener">Ver no GitHub →</a>
+                </article>
+
             </div>
             <p>
                 <a href="https://www.linkedin.com/in/devleandrocoelho" target="_blank" rel="noopener">LinkedIn</a> ·
@@ -103,6 +148,7 @@
         <!-- ===== SEÇÃO 4: CONTATO ===== -->
         <section id="contato" class="secao">
             <h2>Contato</h2>
+            <p>Barra Velha, SC - Brasil · devleandrocoelho@gmail.com</p>
             <!-- novalidate: a validação é feita em JavaScript -->
             <form id="form-contato" novalidate>
                 <label for="nome">Nome</label>
@@ -120,8 +166,18 @@
                 <button type="submit" class="botao">Enviar</button>
             </form>
         </section>
-
     </main>
+
+    <footer class="rodape">© 2026 Leandro Prazeres Coelho · HTML, CSS e JavaScript puros</footer>
+
+    <!-- Modal de confirmação do envio simulado -->
+    <div id="modal" class="modal" hidden>
+        <div class="modal-caixa">
+            <p id="modal-texto"></p>
+            <button id="modal-fechar" class="botao">OK</button>
+        </div>
+    </div>
+
     <script src="js/script.js"></script>
 </body>
 
