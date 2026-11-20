@@ -126,3 +126,17 @@ document.getElementById('modal-fechar').addEventListener('click', () => {
 modal.addEventListener('click', (e) => {
   if (e.target === modal) modal.hidden = true;
 });
+
+// ---------- BOTÃO VOLTAR AO TOPO ----------
+const btnTopo = document.getElementById('btn-topo');
+
+// a cada rolagem, vejo quantos pixels já desci
+// se passou de 300px mostra o botão, senão esconde
+window.addEventListener('scroll', () => {
+  btnTopo.classList.toggle('visivel', window.scrollY > 300);
+});
+
+// ao clicar, volta pro topo com rolagem suave
+btnTopo.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
