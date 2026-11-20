@@ -174,11 +174,16 @@ a {
   justify-content: space-between;
   gap: 30px;
   /* degradê azul no fundo do hero */
-  background: linear-gradient(135deg, #1757c2 0%, #3b82f6 100%);
+  background: linear-gradient(135deg, #0b2e6f 0%, #1757c2 55%, #4da3ff 100%);
   color: #fff;
   padding: 32px;
   border-radius: 14px;
   margin-bottom: 10px;
+}
+
+/* no tema escuro o degradê fica mais discreto */
+body.escuro .hero {
+  background: linear-gradient(135deg, #0a1d3f 0%, #16355f 55%, #2a5fb0 100%);
 }
 
 /* o texto pega o espaço que sobra ao lado da foto */
