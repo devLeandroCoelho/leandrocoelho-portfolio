@@ -138,6 +138,99 @@ a  { color: var(--azul); }
 }
 
 
+/* ---------- BOTÕES, CARTÕES E GRADE ---------- */
+
+/* botão azul ("Fale comigo", "Enviar" e "OK" do modal) */
+.botao {
+  display: inline-block;
+  background: var(--azul);
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: none; /* pro caso de ser um link <a> */
+}
+.botao:hover { opacity: .9; }
+/* no tema escuro o azul fica claro, então o texto do botão fica escuro */
+body.escuro .botao { color: #0e1726; }
+
+/* cartão: caixinha com borda e cantos arredondados */
+.cartao {
+  background: var(--cartao);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 14px;
+}
+.cartao strong { display: block; }
+.cartao span { display: block; color: var(--suave); font-size: .9rem; }
+
+/* grade dos projetos: 3 colunas do mesmo tamanho
+   (1fr = uma parte do espaço disponível) */
+.grade {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.grade .cartao { margin-bottom: 0; } /* na grade o espaço já vem do gap */
+
+
+/* ---------- LINHA DO TEMPO (experiência) ---------- */
+
+/* a linha azul é a borda da esquerda */
+.timeline { border-left: 3px solid var(--azul); margin-left: 8px; padding-left: 22px; }
+
+.timeline .item { position: relative; margin-bottom: 22px; }
+
+/* a bolinha de cada item eu fiz com ::before
+   (ele cria um elemento "falso" só pelo CSS) e posicionei em cima da linha */
+.timeline .item::before {
+  content: "";  /* sem isso o ::before não aparece */
+  position: absolute;
+  left: -30px;
+  top: 6px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--azul);
+  border: 2px solid var(--fundo); /* contorno da cor do fundo pra dar o efeito de furinho */
+}
+
+.data { display: block; color: var(--suave); font-size: .85rem; }
+
+
+/* ---------- FORMULÁRIO E MODAL ---------- */
+
+form {
+  display: flex;
+  flex-direction: column; /* campos um embaixo do outro */
+  gap: 6px;
+  max-width: 520px;
+  margin-top: 14px;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  background: var(--cartao);
+  color: var(--texto);
+  font: inherit; /* usa a mesma fonte do resto do site */
+}
+
+/* o JS coloca essa classe quando o campo tem erro */
+input.invalido, textarea.invalido { border-color: #d93a3f; }
+
+/* texto do erro embaixo do campo (o JS preenche).
+   O min-height é pra página não ficar "pulando" quando o erro aparece */
+.erro { color: #d93a3f; min-height: 1.1em; }
+
+form .botao { align-self: flex-start; } /* botão não estica na largura toda */
+
+/* modal: fundo escuro cobrindo a tela toda com a caixa no meio */
 .modal {
   position: fixed;
   inset: 0;                    /* o mesmo que top, right, bottom e left = 0 */
